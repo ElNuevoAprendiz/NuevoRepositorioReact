@@ -15,7 +15,7 @@ function Card(props: Props) {
         width: "350px",
       }}
     >
-      <div className="card-body">{children}</div> {/*recordar que body es una propiedad del objeto props*/}
+      <div className="card-body">{children}</div> {/*recordar que children es una propiedad del objeto props y contiene lo que vamos a dibujar*/}
     </div>
   );
 }
