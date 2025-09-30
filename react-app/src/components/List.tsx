@@ -1,3 +1,5 @@
+{/*Explicación en detalle de uso de map en los apuntes mios bajo el titulo patron de listado*/}
+
 type Props = {
   data: string[];
 }
