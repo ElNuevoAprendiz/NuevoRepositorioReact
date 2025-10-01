@@ -1,3 +1,5 @@
+import { MouseEvent } from "react";
+
 {/*Explicación en detalle de uso de map en los apuntes mios bajo el titulo patron de listado*/}
 
 type Props = {
@@ -6,12 +8,21 @@ type Props = {
 
 function List({ data }: Props) {
 
+  const handleClick = (item: MouseEvent) => {
+    console.log(item);
+  } 
+  {/*Esta es una función que maneja el evento de click en un elemento de la lista.
+     Recibe como parámetro el elemento que fue clickeado y simplemente lo imprime en la consola.
+     debemos indicarle que el parametro que recibe, es decir el evento es de tipo MouseEvent, pero de
+     React, por eso lo debemos importar en la parte de importaciones con la instrucción
+    import { MouseEvent } from "react"; */ }
+
 
   return (
     
         <ul className="list-group">
           {data.map((elemento) => (
-          <li onClick={()=>console.log(elemento)} key={elemento} className="list-group-item">{elemento}</li>
+          <li onClick={handleClick} key={elemento} className="list-group-item">{elemento}</li>
           ))}
         </ul>
         
