@@ -1,13 +1,17 @@
 import { ReactNode } from "react";
 
-
 interface Props {
-    children: ReactNode; 
+  children: ReactNode;
 }
-{/* ReactNode es un tipo especial de dato que puede contener cualquier cosa que React pueda renderizar, como texto, elementos JSX, componentes, etc. */}
+{
+  /* ReactNode es un tipo especial de dato que puede contener cualquier cosa que React pueda renderizar, como texto, elementos JSX, componentes, etc. */
+}
 
 function Card(props: Props) {
-    const {children} = props; {/* Es una desestruracion de las propiedades pasadas al objeto, que hemos llamdo props */}
+  const { children } = props;
+  {
+    /* Es una desestruracion de las propiedades pasadas al objeto, que hemos llamdo props */
+  }
   return (
     <div
       className="card"
@@ -15,27 +19,23 @@ function Card(props: Props) {
         width: "350px",
       }}
     >
-      <div className="card-body">{children}</div> {/*recordar que body es una propiedad del objeto props*/}
+      <div className="card-body">{children}</div>{" "}
+      {/*recordar que children es una propiedad del objeto props y contiene lo que vamos a dibujar*/}
     </div>
   );
 }
 
 interface CardBodyProps {
-    title: string;
-    text?: string;
-
+  title: string;
+  text?: string;
 }
 export function CardBody(props: CardBodyProps) {
-  
-  const {title, text} = props;
-  
+  const { title, text } = props;
+
   return (
     <>
       <h5 className="card-title">{title}</h5>
-      <p className="card-text">
-        {text}
-      </p>
-      
+      <p className="card-text">{text}</p>
     </>
   );
 }
